@@ -1,22 +1,21 @@
-class Flag {
+class Lap {
   constructor(tempX, tempY){
     this.x = tempX;
     this.y = tempY;
-    this.s = 16;
+    this.s = 60;
   }
   
   display(){
-    imageMode(CENTER);
-    image(flagImg, this.x, this.y)
+    
+    rect(this.x, this.y, 100, 30)
   }
   
   addTime(objectX, objectY){
     let d = dist(this.x, this.y, objectX, objectY);
     
     if (d < this.s/2){
-      timer += 0.5;
-      points += 25;
-      //console.log("picked up flag");
+      points += 100;
+      console.log("completed a lap");
     }
     
   }
